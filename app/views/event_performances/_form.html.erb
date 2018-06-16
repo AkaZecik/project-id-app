@@ -1,0 +1,27 @@
+<%= form_with(model: event_performance, local: true) do |form| %>
+  <% if event_performance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event_performance.errors.count, "error") %> prohibited this event_performance from being saved:</h2>
+
+      <ul>
+      <% event_performance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :performance_id %>
+    <%= form.number_field :performance_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :appearance_id %>
+    <%= form.number_field :appearance_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

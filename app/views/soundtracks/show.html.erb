@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Song:</strong>
+  <%= @soundtrack.song_id %>
+</p>
+
+<p>
+  <strong>Production:</strong>
+  <%= @soundtrack.production_id %>
+</p>
+
+<%= link_to 'Edit', edit_soundtrack_path(@soundtrack) %> |
+<%= link_to 'Back', soundtracks_path %>

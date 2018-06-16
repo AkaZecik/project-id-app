@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @genre_dependency.genre_id %>
+</p>
+
+<p>
+  <strong>Super genre:</strong>
+  <%= @genre_dependency.super_genre_id %>
+</p>
+
+<%= link_to 'Edit', edit_genre_dependency_path(@genre_dependency) %> |
+<%= link_to 'Back', genre_dependencies_path %>

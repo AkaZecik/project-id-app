@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Radio Performances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Performance</th>
+      <th>Radio</th>
+      <th>Time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @radio_performances.each do |radio_performance| %>
+      <tr>
+        <td><%= radio_performance.performance_id %></td>
+        <td><%= radio_performance.radio %></td>
+        <td><%= radio_performance.time %></td>
+        <td><%= link_to 'Show', radio_performance %></td>
+        <td><%= link_to 'Edit', edit_radio_performance_path(radio_performance) %></td>
+        <td><%= link_to 'Destroy', radio_performance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Radio Performance', new_radio_performance_path %>

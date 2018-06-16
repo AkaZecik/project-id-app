@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Member Functions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Member</th>
+      <th>Function</th>
+      <th>Since</th>
+      <th>Until</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @member_functions.each do |member_function| %>
+      <tr>
+        <td><%= member_function.member_id %></td>
+        <td><%= member_function.function %></td>
+        <td><%= member_function.since %></td>
+        <td><%= member_function.until %></td>
+        <td><%= link_to 'Show', member_function %></td>
+        <td><%= link_to 'Edit', edit_member_function_path(member_function) %></td>
+        <td><%= link_to 'Destroy', member_function, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Member Function', new_member_function_path %>

@@ -1,3 +1,2 @@
 class RadioPerformance < ApplicationRecord
-
 end

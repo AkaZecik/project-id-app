@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Member:</strong>
+  <%= @member_function.member_id %>
+</p>
+
+<p>
+  <strong>Function:</strong>
+  <%= @member_function.function %>
+</p>
+
+<p>
+  <strong>Since:</strong>
+  <%= @member_function.since %>
+</p>
+
+<p>
+  <strong>Until:</strong>
+  <%= @member_function.until %>
+</p>
+
+<%= link_to 'Edit', edit_member_function_path(@member_function) %> |
+<%= link_to 'Back', member_functions_path %>

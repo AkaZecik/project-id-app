@@ -1,0 +1,2 @@
+module MemberFunctionsHelper
+end

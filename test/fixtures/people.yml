@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  person_id: 
+  name: MyString
+  surname: MyString
+  stage_name: MyString
+  date_of_birth: 2018-06-16
+  date_of_death: 2018-06-16
+
+two:
+  person_id: 
+  name: MyString
+  surname: MyString
+  stage_name: MyString
+  date_of_birth: 2018-06-16
+  date_of_death: 2018-06-16

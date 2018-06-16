@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Genre Dependencies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Genre</th>
+      <th>Super genre</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @genre_dependencies.each do |genre_dependency| %>
+      <tr>
+        <td><%= genre_dependency.genre_id %></td>
+        <td><%= genre_dependency.super_genre_id %></td>
+        <td><%= link_to 'Show', genre_dependency %></td>
+        <td><%= link_to 'Edit', edit_genre_dependency_path(genre_dependency) %></td>
+        <td><%= link_to 'Destroy', genre_dependency, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Genre Dependency', new_genre_dependency_path %>

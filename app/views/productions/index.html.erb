@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Productions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Production</th>
+      <th>Name</th>
+      <th>Author</th>
+      <th>Production type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @productions.each do |production| %>
+      <tr>
+        <td><%= production.production_id %></td>
+        <td><%= production.name %></td>
+        <td><%= production.author %></td>
+        <td><%= production.production_type_id %></td>
+        <td><%= link_to 'Show', production %></td>
+        <td><%= link_to 'Edit', edit_production_path(production) %></td>
+        <td><%= link_to 'Destroy', production, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Production', new_production_path %>

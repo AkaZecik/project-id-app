@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Production type:</strong>
+  <%= @production_type.production_type_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @production_type.name %>
+</p>
+
+<p>
+  <strong>Super type:</strong>
+  <%= @production_type.super_type %>
+</p>
+
+<%= link_to 'Edit', edit_production_type_path(@production_type) %> |
+<%= link_to 'Back', production_types_path %>

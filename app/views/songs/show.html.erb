@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Song:</strong>
+  <%= @song.song_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @song.name %>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= @song.artist_id %>
+</p>
+
+<p>
+  <strong>Record:</strong>
+  <%= @song.record_id %>
+</p>
+
+<p>
+  <strong>Interval:</strong>
+  <%= @song.interval %>
+</p>
+
+<p>
+  <strong>Cover of:</strong>
+  <%= @song.cover_of %>
+</p>
+
+<%= link_to 'Edit', edit_song_path(@song) %> |
+<%= link_to 'Back', songs_path %>

@@ -1,0 +1,32 @@
+<%= form_with(model: radio_performance, local: true) do |form| %>
+  <% if radio_performance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(radio_performance.errors.count, "error") %> prohibited this radio_performance from being saved:</h2>
+
+      <ul>
+      <% radio_performance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :performance_id %>
+    <%= form.number_field :performance_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :radio %>
+    <%= form.text_field :radio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time %>
+    <%= form.datetime_select :time %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

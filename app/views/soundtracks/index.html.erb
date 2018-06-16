@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Soundtracks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Song</th>
+      <th>Production</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @soundtracks.each do |soundtrack| %>
+      <tr>
+        <td><%= soundtrack.song_id %></td>
+        <td><%= soundtrack.production_id %></td>
+        <td><%= link_to 'Show', soundtrack %></td>
+        <td><%= link_to 'Edit', edit_soundtrack_path(soundtrack) %></td>
+        <td><%= link_to 'Destroy', soundtrack, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Soundtrack', new_soundtrack_path %>

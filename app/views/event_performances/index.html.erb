@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Event Performances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Performance</th>
+      <th>Appearance</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @event_performances.each do |event_performance| %>
+      <tr>
+        <td><%= event_performance.performance_id %></td>
+        <td><%= event_performance.appearance_id %></td>
+        <td><%= link_to 'Show', event_performance %></td>
+        <td><%= link_to 'Edit', edit_event_performance_path(event_performance) %></td>
+        <td><%= link_to 'Destroy', event_performance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event Performance', new_event_performance_path %>

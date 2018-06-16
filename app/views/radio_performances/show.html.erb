@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Performance:</strong>
+  <%= @radio_performance.performance_id %>
+</p>
+
+<p>
+  <strong>Radio:</strong>
+  <%= @radio_performance.radio %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @radio_performance.time %>
+</p>
+
+<%= link_to 'Edit', edit_radio_performance_path(@radio_performance) %> |
+<%= link_to 'Back', radio_performances_path %>
