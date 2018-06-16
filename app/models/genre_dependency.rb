@@ -1,0 +1,2 @@
+class GenreDependency < ApplicationRecord
+end

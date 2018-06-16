@@ -1,0 +1,2 @@
+class MemberFunction < ApplicationRecord
+end

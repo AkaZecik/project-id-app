@@ -1,0 +1,2 @@
+class EventPerformance < ApplicationRecord
+end

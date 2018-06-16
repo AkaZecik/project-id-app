@@ -1,6 +1,7 @@
 class CreateDatabaseStructure < ActiveRecord::Migration[5.2]
   def self.up
 
+
     # These are extensions that must be enabled in order to support this database
     enable_extension "plpgsql"
 
@@ -77,13 +78,13 @@ class CreateDatabaseStructure < ActiveRecord::Migration[5.2]
       t.integer "production_type_id", null: false
     end
 
-    create_table "radio", primary_key: "name", id: :string, limit: 80, force: :cascade do |t|
-    end
-
     create_table "radio_performances", primary_key: ["performance_id", "radio", "time"], force: :cascade do |t|
       t.integer "performance_id", null: false
       t.string "radio", limit: 80, null: false
       t.datetime "time", null: false
+    end
+
+    create_table "radios", primary_key: "name", id: :string, limit: 80, force: :cascade do |t|
     end
 
     create_table "records", primary_key: "record_id", id: :serial, force: :cascade do |t|
@@ -121,7 +122,7 @@ class CreateDatabaseStructure < ActiveRecord::Migration[5.2]
     add_foreign_key "production_types", "production_types", column: "super_type", primary_key: "production_type_id", name: "production_types_super_type_fkey"
     add_foreign_key "productions", "production_types", primary_key: "production_type_id", name: "productions_production_type_id_fkey"
     add_foreign_key "radio_performances", "performances", primary_key: "performance_id", name: "radio_performances_performance_id_fkey"
-    add_foreign_key "radio_performances", "radio", column: "radio", primary_key: "name", name: "radio_performances_radio_fkey"
+    add_foreign_key "radio_performances", "radios", column: "radio", primary_key: "name", name: "radio_performances_radio_fkey"
     add_foreign_key "records", "genres", primary_key: "genre_id", name: "records_genre_id_fkey"
     add_foreign_key "songs", "artists", primary_key: "artist_id", name: "songs_artist_id_fkey"
     add_foreign_key "songs", "records", primary_key: "record_id", name: "songs_record_id_fkey"
