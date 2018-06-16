@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'static_pages#home'
   resources :soundtracks
   resources :records
   resources :radios
