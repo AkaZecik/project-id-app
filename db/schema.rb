@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_15_194005) do
+ActiveRecord::Schema.define(version: 2018_06_16_224111) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2018_06_15_194005) do
     t.string "name", limit: 80, null: false
   end
 
-  create_table "event_performances", primary_key: ["performance_id", "appearance_id"], force: :cascade do |t|
+  create_table "event_performances", id: :serial, force: :cascade do |t|
     t.integer "performance_id", null: false
     t.integer "appearance_id", null: false
   end
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2018_06_15_194005) do
     t.date "end_date", null: false
   end
 
-  create_table "featuring", primary_key: ["artist_id", "song_id"], force: :cascade do |t|
+  create_table "featuring", id: :serial, force: :cascade do |t|
     t.integer "artist_id", null: false
     t.integer "song_id", null: false
   end
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2018_06_15_194005) do
   create_table "functions", primary_key: "name", id: :string, limit: 80, force: :cascade do |t|
   end
 
-  create_table "genre_dependencies", primary_key: ["genre_id", "super_genre_id"], force: :cascade do |t|
+  create_table "genre_dependencies", id: :serial, force: :cascade do |t|
     t.integer "genre_id", null: false
     t.integer "super_genre_id", null: false
   end
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2018_06_15_194005) do
     t.string "name", limit: 80, null: false
   end
 
-  create_table "member_functions", primary_key: ["member_id", "function", "since"], force: :cascade do |t|
+  create_table "member_functions", id: :serial, force: :cascade do |t|
     t.integer "member_id", null: false
     t.string "function", limit: 80, null: false
     t.date "since", null: false
@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 2018_06_15_194005) do
     t.integer "production_type_id", null: false
   end
 
-  create_table "radio_performances", primary_key: ["performance_id", "radio", "time"], force: :cascade do |t|
+  create_table "radio_performances", id: :serial, force: :cascade do |t|
     t.integer "performance_id", null: false
     t.string "radio", limit: 80, null: false
     t.datetime "time", null: false
@@ -111,7 +111,7 @@ ActiveRecord::Schema.define(version: 2018_06_15_194005) do
     t.integer "cover_of"
   end
 
-  create_table "soundtracks", primary_key: ["song_id", "production_id"], force: :cascade do |t|
+  create_table "soundtracks", id: :serial, force: :cascade do |t|
     t.integer "song_id", null: false
     t.integer "production_id", null: false
   end
