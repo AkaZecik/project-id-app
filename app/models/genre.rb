@@ -5,7 +5,7 @@ class Genre < ApplicationRecord
   validates :genre_id, numericality: true, if: Proc.new {|instance| instance.genre_id.present?}
 
 
-  before_create do
+  before_save do
     if self.genre_id == nil
       self.genre_id = Genre.maximum(:genre_id).to_i + 1
     end

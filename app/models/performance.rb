@@ -7,7 +7,7 @@ class Performance < ApplicationRecord
   validates :performance_id, numericality: true, if: Proc.new {|instance| instance.performance_id.present?}
 
 
-  before_create do
+  before_save do
     if self.performance_id == nil
       self.performance_id = Performance.maximum(:performance_id).to_i + 1
     end

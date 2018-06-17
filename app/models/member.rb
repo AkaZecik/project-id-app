@@ -9,7 +9,7 @@ class Member < ApplicationRecord
   validates :member_id, numericality: true, if: Proc.new {|instance| instance.member_id.present?}
 
 
-  before_create do
+  before_save do
     if self.member_id == nil
       self.member_id = Member.maximum(:member_id).to_i + 1
     end

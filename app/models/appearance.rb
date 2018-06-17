@@ -8,7 +8,7 @@ class Appearance < ApplicationRecord
   validates :appearance_id, numericality: true, if: Proc.new {|instance| instance.appearance_id.present?}
 
 
-  before_create do
+  before_save do
     if self.appearance_id == nil
       self.appearance_id = Appearance.maximum(:appearance_id).to_i + 1
     end

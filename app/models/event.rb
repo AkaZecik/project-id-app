@@ -6,7 +6,7 @@ class Event < ApplicationRecord
   validate :start_before_end
 
 
-  before_create do
+  before_save do
     if self.event_id == nil
       self.event_id = Event.maximum(:event_id).to_i + 1
     end

@@ -5,7 +5,7 @@ class Person < ApplicationRecord
   validates :person_id, numericality: true, if: Proc.new {|instance| instance.person_id.present?}
   validate :born_before_death
 
-  before_create do
+  before_save do
     if self.person_id == nil
       self.person_id = Person.maximum(:person_id).to_i + 1
     end

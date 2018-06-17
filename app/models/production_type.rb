@@ -6,7 +6,7 @@ class ProductionType < ApplicationRecord
   validates :production_type_id, numericality: true, if: Proc.new {|instance| instance.production_type_id.present?}
   validates :super_type, numericality: true, if: Proc.new {|instance| instance.super_type.present?}
 
-  before_create do
+  before_save do
     if self.production_type_id == nil
       self.production_type_id = ProductionType.maximum(:production_type_id).to_i + 1
     end

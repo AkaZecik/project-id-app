@@ -14,7 +14,7 @@ class Song < ApplicationRecord
   validates :cover_of, numericality: true, if: Proc.new {|instance| instance.cover_of.present?}
   validate :interval_cannot_be_negative
 
-  before_create do
+  before_save do
     if self.song_id == nil
       self.song_id = Song.maximum(:song_id).to_i + 1
     end
