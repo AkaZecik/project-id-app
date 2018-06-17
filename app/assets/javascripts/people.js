@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).on("turbolinks:load", function () {
     let date_of_death_nil = $("#date_of_death_nil");
 
     $("select[id*=date_of_death]").prop("disabled",

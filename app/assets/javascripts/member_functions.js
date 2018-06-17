@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).on("turbolinks:load", function () {
     let function_still_active = $("#function_still_active");
 
     $("select[id*=until]").prop("disabled",
