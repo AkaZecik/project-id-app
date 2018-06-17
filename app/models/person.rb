@@ -16,7 +16,7 @@ class Person < ApplicationRecord
 
   def born_before_death
     if date_of_death.present? && date_of_birth > date_of_death
-      errors << "Cannot die before being born"
+      errors[:date_of_death] << "can't be before date of birth"
     end
   end
 end

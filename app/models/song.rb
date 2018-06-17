@@ -25,7 +25,7 @@ class Song < ApplicationRecord
 
   def interval_cannot_be_negative
     unless interval =~ /\d*/
-      errors << "Interval cannot be negative"
+      errors[:interval] << "can't be negative"
     end
   end
 end

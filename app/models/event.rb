@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
   has_many :appearances
-  validates :name, presence: true, unless: Proc.new {|instance| instance.name.present?}
+  validates :name, presence: true, if: Proc.new {|instance| instance.name.present?}
   validates :place, :begin_date, :end_date, presence: true
   validates :event_id, numericality: true, if: Proc.new {|instance| instance.event_id.present?}
   validate :start_before_end
@@ -16,7 +16,7 @@ class Event < ApplicationRecord
 
   def start_before_end
     if begin_date > end_date
-      errors << "Event cannot start after its end"
+      errors[:end_date] << "can't be set before begin date"
     end
   end
 end

@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2018_06_17_083048) do
 
   create_table "genres", primary_key: "genre_id", id: :serial, force: :cascade do |t|
     t.string "name", limit: 80, null: false
+    t.index ["genre_id"], name: "index_genres_on_genre_id", unique: true
   end
 
   create_table "member_functions", id: :serial, force: :cascade do |t|
