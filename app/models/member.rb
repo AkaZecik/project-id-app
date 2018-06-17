@@ -5,5 +5,6 @@ class Member < ApplicationRecord
   has_many :functions, through: :member_functions
   validates :artist_id, uniqueness: {scope: [:member_id, :person_id]}
   validates :artist_id, :person_id, presence: true
-  validates :member_id, :artist_id, :person_id, numericality: true
+  validates :artist_id, :person_id, numericality: true
+  validates :member_id, numericality: true, if: Proc.new {|instance| instance.member_id.present?}
 end

@@ -2,7 +2,7 @@ class Event < ApplicationRecord
   has_many :appearances
   validates :name, presence: true, unless: Proc.new {|instance| instance.name.present?}
   validates :place, :begin_date, :end_date, presence: true
-  validates :event_id, numericality: true
+  validates :event_id, numericality: true, if: Proc.new {|instance| instance.event_id.present?}
   validate :start_before_end
 
   private

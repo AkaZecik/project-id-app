@@ -9,7 +9,8 @@ class Song < ApplicationRecord
   has_many :featuring_artists, class_name: "Artist", through: :featuring
   has_many :uses_in_productions, through: :soundtracks
   validates :name, :artist_id, :record_id, :interval, presence: true
-  validates :song_id, :artist_id, :record_id, numericality: true
+  validates :artist_id, :record_id, numericality: true
+  validates :song_id, numericality: true, if: Proc.new {|instance| instance.song_id.present?}
   validates :cover_of, numericality: true, if: Proc.new {|instance| instance.cover_of.present?}
   validate :interval_cannot_be_negative
 
