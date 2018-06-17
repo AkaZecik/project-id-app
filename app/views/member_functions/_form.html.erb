@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :since %>
-    <%= form.date_select :since %>
+    <%= form.date_select :since, start_year: 1900 %>
   </div>
 
   <div class="field">
@@ -32,7 +32,7 @@
       <span id="function_active">Function active</span>
     <% end %>
     <%= form.label :until %>
-    <%= form.date_select :until, id: "until" %>
+    <%= form.date_select :until, id: "until", start_year: 1900 %>
   </div>
 
   <div class="actions">

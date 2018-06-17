@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :date_of_birth %>
-    <%= form.date_select :date_of_birth %>
+    <%= form.date_select :date_of_birth, start_year: 1900 %>
   </div>
 
   <div class="field">
@@ -42,7 +42,7 @@
       <span id="person_didnt_die">Person didn't die yet</span>
     <% end %>
     <%= form.label :date_of_death %>
-    <%= form.date_select :date_of_death, id: "date_of_death_" %>
+    <%= form.date_select :date_of_death, id: "date_of_death_", start_year: 1900 %>
   </div>
 
   <div class="actions">
