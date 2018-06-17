@@ -38,14 +38,11 @@
 
   <div class="field">
     <%= form.label :date_of_death_nil do %>
-      <%= form.check_box :date_of_death_nil %>
-      <span>Person didn't die yet</span>
+      <%= form.check_box :date_of_death_nil, id: "date_of_death_nil" %>
+      <span id="person_didnt_die">Person didn't die yet</span>
     <% end %>
-  </div>
-
-  <div class="field">
     <%= form.label :date_of_death %>
-    <%= form.date_select :date_of_death %>
+    <%= form.date_select :date_of_death, id: "date_of_death_" %>
   </div>
 
   <div class="actions">

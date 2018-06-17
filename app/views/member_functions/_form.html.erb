@@ -28,14 +28,11 @@
 
   <div class="field">
     <%= form.label :function_still_active do %>
-      <%= form.check_box :function_still_active %>
-      <span>Function active</span>
+      <%= form.check_box :function_still_active, id: "function_still_active" %>
+      <span id="function_active">Function active</span>
     <% end %>
-  </div>
-
-  <div class="field">
     <%= form.label :until %>
-    <%= form.date_select :until %>
+    <%= form.date_select :until, id: "until" %>
   </div>
 
   <div class="actions">
