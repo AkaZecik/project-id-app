@@ -8,8 +8,8 @@ class Performance < ApplicationRecord
 
 
   before_create do
-    if performance_id == nil
-      performance_id = Performance.maximum(:performance_id).to_i + 1
+    if self.performance_id == nil
+      self.performance_id = Performance.maximum(:performance_id).to_i + 1
     end
   end
 end

@@ -10,8 +10,8 @@ class Member < ApplicationRecord
 
 
   before_create do
-    if member_id == nil
-      member_id = Member.maximum(:member_id).to_i + 1
+    if self.member_id == nil
+      self.member_id = Member.maximum(:member_id).to_i + 1
     end
   end
 end

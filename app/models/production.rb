@@ -7,8 +7,8 @@ class Production < ApplicationRecord
   validates :production_id, numericality: true, if: Proc.new {|instance| instance.production_id.present?}
 
   before_create do
-    if production_id == nil
-      production_id = Production.maximum(:production_id).to_i + 1
+    if self.production_id == nil
+      self.production_id = Production.maximum(:production_id).to_i + 1
     end
   end
 end

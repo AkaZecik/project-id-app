@@ -6,8 +6,8 @@ class Person < ApplicationRecord
   validate :born_before_death
 
   before_create do
-    if person_id == nil
-      person_id = Person.maximum(:person_id).to_i + 1
+    if self.person_id == nil
+      self.person_id = Person.maximum(:person_id).to_i + 1
     end
   end
 

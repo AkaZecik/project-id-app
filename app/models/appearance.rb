@@ -9,8 +9,8 @@ class Appearance < ApplicationRecord
 
 
   before_create do
-    if appearance_id == nil
-      appearance_id = Appearance.maximum(:appearance_id).to_i + 1
+    if self.appearance_id == nil
+      self.appearance_id = Appearance.maximum(:appearance_id).to_i + 1
     end
   end
 end

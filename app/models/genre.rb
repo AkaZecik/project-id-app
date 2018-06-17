@@ -6,8 +6,8 @@ class Genre < ApplicationRecord
 
 
   before_create do
-    if genre_id == nil
-      genre_id = Genre.maximum(:genre_id).to_i + 1
+    if self.genre_id == nil
+      self.genre_id = Genre.maximum(:genre_id).to_i + 1
     end
   end
 end

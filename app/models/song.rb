@@ -15,8 +15,8 @@ class Song < ApplicationRecord
   validate :interval_cannot_be_negative
 
   before_create do
-    if song_id == nil
-      song_id = Song.maximum(:song_id).to_i + 1
+    if self.song_id == nil
+      self.song_id = Song.maximum(:song_id).to_i + 1
     end
   end
 

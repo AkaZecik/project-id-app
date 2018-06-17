@@ -6,8 +6,8 @@ class Artist < ApplicationRecord
   validates :artist_id, presence: true, numericality: true, if: Proc.new {|instance| instance.artist_id.present?}
 
   before_create do
-    if artist_id == nil
-      artist_id = Artist.maximum(:artist_id).to_i + 1
+    if self.artist_id == nil
+      self.artist_id = Artist.maximum(:artist_id).to_i + 1
     end
   end
 end

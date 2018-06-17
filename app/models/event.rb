@@ -7,8 +7,8 @@ class Event < ApplicationRecord
 
 
   before_create do
-    if event_id == nil
-      event_id = Event.maximum(:event_id).to_i + 1
+    if self.event_id == nil
+      self.event_id = Event.maximum(:event_id).to_i + 1
     end
   end
 
