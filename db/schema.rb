@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_16_224111) do
+ActiveRecord::Schema.define(version: 2018_06_17_083048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_06_16_224111) do
   create_table "event_performances", id: :serial, force: :cascade do |t|
     t.integer "performance_id", null: false
     t.integer "appearance_id", null: false
+    t.index ["performance_id", "appearance_id"], name: "index_event_performances_on_performance_id_and_appearance_id", unique: true
   end
 
   create_table "events", primary_key: "event_id", id: :serial, force: :cascade do |t|
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 2018_06_16_224111) do
   create_table "featuring", id: :serial, force: :cascade do |t|
     t.integer "artist_id", null: false
     t.integer "song_id", null: false
+    t.index ["artist_id", "song_id"], name: "index_featuring_on_artist_id_and_song_id", unique: true
   end
 
   create_table "functions", primary_key: "name", id: :string, limit: 80, force: :cascade do |t|
@@ -47,6 +49,7 @@ ActiveRecord::Schema.define(version: 2018_06_16_224111) do
   create_table "genre_dependencies", id: :serial, force: :cascade do |t|
     t.integer "genre_id", null: false
     t.integer "super_genre_id", null: false
+    t.index ["genre_id", "super_genre_id"], name: "index_genre_dependencies_on_genre_id_and_super_genre_id", unique: true
   end
 
   create_table "genres", primary_key: "genre_id", id: :serial, force: :cascade do |t|
@@ -58,6 +61,7 @@ ActiveRecord::Schema.define(version: 2018_06_16_224111) do
     t.string "function", limit: 80, null: false
     t.date "since", null: false
     t.date "until"
+    t.index ["member_id", "function", "since"], name: "index_member_functions_on_member_id_and_function_and_since", unique: true
   end
 
   create_table "members", primary_key: "member_id", id: :serial, force: :cascade do |t|
@@ -92,6 +96,7 @@ ActiveRecord::Schema.define(version: 2018_06_16_224111) do
     t.integer "performance_id", null: false
     t.string "radio", limit: 80, null: false
     t.datetime "time", null: false
+    t.index ["performance_id", "radio", "time"], name: "index_radio_performances_on_performance_id_and_radio_and_time", unique: true
   end
 
   create_table "radios", primary_key: "name", id: :string, limit: 80, force: :cascade do |t|
@@ -114,6 +119,7 @@ ActiveRecord::Schema.define(version: 2018_06_16_224111) do
   create_table "soundtracks", id: :serial, force: :cascade do |t|
     t.integer "song_id", null: false
     t.integer "production_id", null: false
+    t.index ["song_id", "production_id"], name: "index_soundtracks_on_song_id_and_production_id", unique: true
   end
 
   add_foreign_key "appearances", "artists", primary_key: "artist_id", name: "appearances_artist_id_fkey"
