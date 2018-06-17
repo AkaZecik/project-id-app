@@ -4,9 +4,9 @@
       <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
 
       <ul>
-      <% person.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% person.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -34,6 +34,13 @@
   <div class="field">
     <%= form.label :date_of_birth %>
     <%= form.date_select :date_of_birth %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_of_death_nil do %>
+      <%= form.check_box :date_of_death_nil %>
+      <span>Person didn't die yet</span>
+    <% end %>
   </div>
 
   <div class="field">

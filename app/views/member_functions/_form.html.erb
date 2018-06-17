@@ -4,9 +4,9 @@
       <h2><%= pluralize(member_function.errors.count, "error") %> prohibited this member_function from being saved:</h2>
 
       <ul>
-      <% member_function.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% member_function.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -24,6 +24,13 @@
   <div class="field">
     <%= form.label :since %>
     <%= form.date_select :since %>
+  </div>
+
+  <div class="field">
+    <%= form.label :function_still_active do %>
+      <%= form.check_box :function_still_active %>
+      <span>Function active</span>
+    <% end %>
   </div>
 
   <div class="field">

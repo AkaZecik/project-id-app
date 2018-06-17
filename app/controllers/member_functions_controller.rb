@@ -69,6 +69,6 @@ class MemberFunctionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def member_function_params
-      params.require(:member_function).permit(:member_id, :function, :since, :until)
+      params.require(:member_function).permit(:member_id, :function, :since, :until, :function_still_active)
     end
 end
