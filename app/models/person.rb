@@ -12,7 +12,7 @@ class Person < ApplicationRecord
       self.person_id = Person.maximum(:person_id).to_i + 1
     end
 
-    if date_of_death_nil
+    if date_of_death_nil == "1"
       puts "\nSetting date of death to nil\n"
       self.date_of_death = nil
     end

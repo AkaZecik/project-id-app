@@ -8,7 +8,7 @@ class MemberFunction < ApplicationRecord
   validate :start_before_end
 
   before_save do
-    if function_still_active
+    if function_still_active == "1"
       self.until = nil
     end
   end
