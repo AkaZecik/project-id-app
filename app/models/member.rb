@@ -7,4 +7,11 @@ class Member < ApplicationRecord
   validates :artist_id, :person_id, presence: true
   validates :artist_id, :person_id, numericality: true
   validates :member_id, numericality: true, if: Proc.new {|instance| instance.member_id.present?}
+
+
+  before_create do
+    if member_id == nil
+      member_id = Member.maximum(:member_id).to_i + 1
+    end
+  end
 end

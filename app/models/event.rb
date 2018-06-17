@@ -5,6 +5,13 @@ class Event < ApplicationRecord
   validates :event_id, numericality: true, if: Proc.new {|instance| instance.event_id.present?}
   validate :start_before_end
 
+
+  before_create do
+    if event_id == nil
+      event_id = Event.maximum(:event_id).to_i + 1
+    end
+  end
+
   private
 
   def start_before_end
