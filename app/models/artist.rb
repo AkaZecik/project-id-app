@@ -4,6 +4,7 @@ class Artist < ApplicationRecord
   has_many :featuring
   has_many :songs
   validates :artist_id, presence: true, numericality: true, if: Proc.new {|instance| instance.artist_id.present?}
+  validates :artist_id, uniqueness: true
 
   before_save do
     if self.artist_id == nil

@@ -5,6 +5,7 @@ class ProductionType < ApplicationRecord
   validates :name, presence: true, uniqueness: {case_sensitive: false}
   validates :production_type_id, numericality: true, if: Proc.new {|instance| instance.production_type_id.present?}
   validates :super_type, numericality: true, if: Proc.new {|instance| instance.super_type.present?}
+  validates :production_type_id, uniqueness: true
 
   before_save do
     if self.production_type_id == nil

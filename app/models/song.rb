@@ -13,6 +13,7 @@ class Song < ApplicationRecord
   validates :song_id, numericality: true, if: Proc.new {|instance| instance.song_id.present?}
   validates :cover_of, numericality: true, if: Proc.new {|instance| instance.cover_of.present?}
   validate :interval_cannot_be_negative
+  validates :song_id, uniqueness: true
 
   before_save do
     if self.song_id == nil

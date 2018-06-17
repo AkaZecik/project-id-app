@@ -4,6 +4,7 @@ class Person < ApplicationRecord
   validates :stage_name, presence: true, if: Proc.new {|instance| instance.stage_name.present?}
   validates :person_id, numericality: true, if: Proc.new {|instance| instance.person_id.present?}
   validate :born_before_death
+  validates :person_id, uniqueness: true
 
   before_save do
     if self.person_id == nil

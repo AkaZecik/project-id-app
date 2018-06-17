@@ -7,7 +7,7 @@ class Member < ApplicationRecord
   validates :artist_id, :person_id, presence: true
   validates :artist_id, :person_id, numericality: true
   validates :member_id, numericality: true, if: Proc.new {|instance| instance.member_id.present?}
-
+  validates :member_id, uniqueness: true
 
   before_save do
     if self.member_id == nil

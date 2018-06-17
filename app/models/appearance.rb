@@ -4,6 +4,7 @@ class Appearance < ApplicationRecord
   has_many :event_performances
   has_many :performances, through: :event_performances
   validates :artist_id, :event_id, presence: true, numericality: true
+  validates :appearance_id, uniqueness: true
   validates :artist_id, uniqueness: {scope: :event_id}
   validates :appearance_id, numericality: true, if: Proc.new {|instance| instance.appearance_id.present?}
 

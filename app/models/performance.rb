@@ -5,7 +5,7 @@ class Performance < ApplicationRecord
   validates :song_id, presence: true
   validates :song_id, numericality: true
   validates :performance_id, numericality: true, if: Proc.new {|instance| instance.performance_id.present?}
-
+  validates :performance_id, uniqueness: true
 
   before_save do
     if self.performance_id == nil

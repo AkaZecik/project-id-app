@@ -5,6 +5,7 @@ class Production < ApplicationRecord
   validates :name, :author, :production_type_id, presence: true
   validates :production_type_id, numericality: true
   validates :production_id, numericality: true, if: Proc.new {|instance| instance.production_id.present?}
+  validates :production_id, uniqueness: true
 
   before_save do
     if self.production_id == nil
