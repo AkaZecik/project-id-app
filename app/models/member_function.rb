@@ -8,7 +8,7 @@ class MemberFunction < ApplicationRecord
 
   private
     def start_before_end
-      if since > :until
+      if self.until.present? && since > self.until
         errors << "'Since' cannot be after 'until'"
       end
     end
