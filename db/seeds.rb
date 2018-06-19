@@ -54,7 +54,9 @@ artists = [
     [16, 'Nicki Minaj'],
     [17, 'Sia'],
     [18, 'Akon'],
-    [19, 'Sam Martin']
+    [19, 'Sam Martin'],
+    [20, 'Bob Dylan'], [21, 'Stevie Wonder'], [22, 'Hank Williams'], [23, 'ELton John'],
+    [24, 'Jimi Hendrix']
 ]
 
 records = [
@@ -97,7 +99,13 @@ records = [
     [37, 'Alice in Wonderland', 25, '2 Mar 2010'],
     [38, 'Oz the Great and Powerful [Original Soundtrack]', 25, '5 Mar 2013'],
     [39, 'Nothing but the Beat', 26, '26 Aug 2011'],
-    [40, 'Listen', 26, '21 Nov 2014']
+    [40, 'Listen', 26, '21 Nov 2014'],
+    [41, 'Bringing It All Back Home', '22 Mar 1965', 7],
+    [42, 'Innervisions', '3 Aug 1973', 12],
+    [43, 'Hank Williams Sings', '9 Nov 1951', 6],
+    [44, 'Madman Across the Water', '5 Nov 1971', 2],
+    [45, 'Axis: Bold as Love', '1 Dec 1967', 2],
+    [46 , 'Under the Covers: Essential Red Hot Chili Peppers', '31 Mar 1998', 14]
 ]
 
 songs = [
@@ -712,7 +720,17 @@ songs = [
     [609, 'The Whisperer', 15, 40, '00:03:54', nil],
     [610, 'Dangerous', 15, 40, '00:03:23', nil],
     [611, 'Lovers on the Sun', 15, 40, '00:03:17', nil],
-    [612, 'Yesterday', 15, 40, '00:04:34', nil]
+    [612, 'Yesterday', 15, 40, '00:04:34', nil],
+    [613, 'Subterranean Homesick Blues', 20, 41, '00:02:21', nil],
+    [614, 'Higher Ground', 21, 42, '00:03:42', nil],
+    [615, 'Why Don''t You Love Me', 22, 43, '00:02:23', nil],
+    [616, 'Tiny Dancer', 23, 44, '00:06:15', nil],
+    [617, 'Castles Made of Sand', 24, 45, '00:02:46', nil],
+    [618, 'Subterranean Homesick Blues', 2, 46, '00:03:01', 613],
+    [619, 'Higher Ground', 2, 46, '00:03:41', 614],
+    [620, 'Why Don''t You Love Me', 2, 46, '00:02:01', 615],
+    [621, 'Tiny Dancer', 2, 46, '00:03:50', 616],
+    [622, 'Castles Made of Sand', 2, 46, '00:04:12', 617]
 ]
 
 production_types = [
@@ -1107,7 +1125,12 @@ people = [
     [72, 'Onika', 'Maray', 'Nicki Minaj', '8 Dec 1982', nil],
     [73, 'Sia', 'Furler', 'Sia', '18 Dec 1975', nil],
     [74, 'Aliaune', 'Badara', 'Akon', '16 Apr 1973', nil],
-    [75, 'Samuel', 'Martin', 'Sam Martin', '7 Dec 1983', nil]
+    [75, 'Samuel', 'Martin', 'Sam Martin', '7 Dec 1983', nil],
+    [76, 'Robert', 'Zimmerman', 'Bob Dylan', '24 May 1941', nil],
+    [77, 'Stevland', 'Morris', 'Little Stevie Wonder', '13 May 1950', nil],
+    [78, 'Hiram', 'Williams', 'Hank Williams', '17 Sep 1923', '1 Jan 1953'],
+    [79, 'Reginald', 'Dwight', 'Elton John', '25 Mar 1947', nil],
+    [80, 'Johnny', 'Hendrix', 'Jimi Hendrix', '27 Nov 1942', '18 Sep 1970']
 ]
 
 members = [
@@ -1185,7 +1208,8 @@ members = [
     [72, 16, 72],
     [73, 17, 73],
     [74, 18, 74],
-    [75, 19, 75]
+    [75, 19, 75],
+    [76, 20, 76], [77, 21, 77], [78, 22, 78], [79, 23, 79], [80, 24, 80]
 ]
 
 functions = [
@@ -1284,7 +1308,12 @@ member_functions = [
     [72, 'Vocal', '17 Aug 2004', nil],
     [73, 'Vocal', '20 Jan 1993', nil],
     [74, 'Vocal', '3 May 1994', nil],
-    [75, 'Vocal', '30 Jun 2012', nil]
+    [75, 'Vocal', '30 Jun 2012', nil],
+    [76, 'Guitar', '20 Dec 1959', nil],
+    [77, 'Vocal', '19 Apr 1961', nil],
+    [78, 'Vocal', '5 Mar 1937', '12 Apr 1952'],
+    [79, 'Vocal', '15 Aug 1963', nil],
+    [80, 'Vocal', '10 Jan 1964', '20 May 1970']
 ]
 
 appearances = [
