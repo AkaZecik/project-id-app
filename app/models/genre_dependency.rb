@@ -15,6 +15,7 @@ class GenreDependency < ApplicationRecord
 
     while super_genre_id != nil
       arr << super_genre_id
+
       if super_genre_id == self.genre_id
         errors[:base] << "Genre dependency should not form cycles: #{arr.join(" < ")}"
         throw :abort
