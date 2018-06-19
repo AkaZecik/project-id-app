@@ -12,4 +12,14 @@ class Artist < ApplicationRecord
       self.artist_id = Artist.maximum(:artist_id).to_i + 1
     end
   end
+
+  def start_date_before(date)
+    self&.members.each do |member|
+      if member.member_functions.since < date
+        return true
+      end
+    end
+
+    false
+  end
 end

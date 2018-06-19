@@ -15,6 +15,7 @@ class Song < ApplicationRecord
   validate :interval_cannot_be_negative
   validates :song_id, uniqueness: true
   validate :cover_after_song
+  validate :artist_exists
 
   before_destroy do
     Song.where(cover_of: song_id).update_all(cover_of: nil)
@@ -50,6 +51,13 @@ class Song < ApplicationRecord
 
     if covered_song_release_date.present? && own_release_date.present? && covered_song_release_date > own_release_date
       errors[:base] << "Cover cannot be released before the covered song"
+      throw :abort
+    end
+  end
+
+  def artist_exists
+    if self&.artist.start_date_before(self.record.release_date)
+      errors[:base] << "Artist cannot create song before it exists"
       throw :abort
     end
   end
