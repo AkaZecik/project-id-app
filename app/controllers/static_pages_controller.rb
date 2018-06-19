@@ -3,6 +3,8 @@ class StaticPagesController < ApplicationController
   end
 
   def song_record
-    @song
+  end
+
+  def skills
   end
 end

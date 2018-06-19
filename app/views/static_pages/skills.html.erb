@@ -1,0 +1,20 @@
+<div>
+  <ul>
+    <%= Person.find_each do |person| %>
+      <li>Name: <%= person.name %></li>
+      <li>Stage name: <%= person.stage_name %></li>
+      <li>Surname: <%= person.surname %></li>
+      <% if person.functions.count > 0 %>
+        <li>
+          Functions:
+          <ul>
+            <%= person.functions.find_each do |function| %>
+              <li><%= function.name %></li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
+      <br>
+    <% end %>
+  </ul>
+</div>
