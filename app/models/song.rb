@@ -26,6 +26,16 @@ class Song < ApplicationRecord
     end
   end
 
+  def interval_in_seconds
+    seconds = 0
+
+    self.interval.split(":").reverse.each_with_index do |val, index|
+      seconds += val.to_i * 60 ** index.to_i
+    end
+
+    seconds
+  end
+
   private
 
   def interval_cannot_be_negative
