@@ -19,5 +19,7 @@ Rails.application.routes.draw do
   resources :artists
   resources :appearances
   resources :songs
+  get 'static_pages/song_record'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,26 @@
+<div>
+  <%= Record.find_each do |record| %>
+    <ul>
+      <li>Record name: <%= record.name %></li>
+      <li>Release date: <%= record.release_date %></li>
+      <li>Genre: <%= record.genre.name %></li>
+      <li>
+        Songs:
+        <ul>
+          <%= record.songs.find_each do |song| %>
+            <li>
+              Song name: <%= song.name %>
+              <ul>
+                <li>Artist: <%= song.artist.name %></li>
+                <li>Interval: <%= song.interval %></li>
+                <li></li>
+              </ul>
+            </li>
+          <% end %>
+        </ul>
+      </li>
+      <%#= record.songs.find_each do |song| %>
+      <%# end %>
+    </ul>
+  <% end %>
+</div>
