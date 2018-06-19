@@ -1,6 +1,6 @@
 class Person < ApplicationRecord
-  has_many :members
-  has_many :member_functions, through: :members
+  has_many :members, dependent: :destroy
+  has_many :member_functions, through: :members, dependent: :destroy
   has_many :functions, through: :member_functions, source: :the_function
   validates :name, :surname, :date_of_birth, presence: true
   validates :stage_name, presence: true, if: Proc.new {|instance| instance.stage_name.present?}

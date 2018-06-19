@@ -1,8 +1,9 @@
 class Artist < ApplicationRecord
-  has_many :members
-  has_many :appearances
-  has_many :featuring
-  has_many :songs
+  has_many :members, dependent: :destroy
+  has_many :appearances, dependent: :destroy
+  has_many :featuring, dependent: :destroy
+  has_many :songs, dependent: :destroy
+  has_many :featured_songs, class_name: "Song", through: :featuring, source: :song, dependent: :destroy
   validates :artist_id, presence: true, numericality: true, if: Proc.new {|instance| instance.artist_id.present?}
   validates :artist_id, uniqueness: true
 

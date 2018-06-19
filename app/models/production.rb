@@ -1,6 +1,6 @@
 class Production < ApplicationRecord
   belongs_to :production_type
-  has_many :soundtracks
+  has_many :soundtracks, dependent: :destroy
   has_many :songs, through: :soundtracks
   validates :name, :author, :production_type_id, presence: true
   validates :production_type_id, numericality: true
