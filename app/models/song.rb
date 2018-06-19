@@ -46,7 +46,7 @@ class Song < ApplicationRecord
   end
 
   def cover_after_song
-    covered_song_release_date = self.covered_song&.record.release_date
+    covered_song_release_date = self.covered_song&.record&.release_date
     own_release_date = self.record&.release_date
 
     if covered_song_release_date.present? && own_release_date.present? && covered_song_release_date > own_release_date

@@ -14,8 +14,8 @@ class RadioPerformance < ApplicationRecord
 
     RadioPerformance.where(radio: self.radio).find_each do |radio_performance|
       if radio_performance.attributes == self.attributes
-        puts radio_performance.attributes
-        puts self.attributes
+        # puts radio_performance.attributes
+        # puts self.attributes
         next
       end
 
@@ -27,7 +27,7 @@ class RadioPerformance < ApplicationRecord
         throw :abort
       end
 
-      if song_start >= played_song_start && sond_start <= played_song_end
+      if song_start >= played_song_start && song_start <= played_song_end
         errors[:base] << "Another song is played: #{radio_performance.performance.song.name}, #{radio_performance.time}, #{radio_performance.performance.song.interval}"
         throw :abort
       end

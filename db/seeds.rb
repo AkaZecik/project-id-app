@@ -100,12 +100,12 @@ records = [
     [38, 'Oz the Great and Powerful [Original Soundtrack]', 25, '5 Mar 2013'],
     [39, 'Nothing but the Beat', 26, '26 Aug 2011'],
     [40, 'Listen', 26, '21 Nov 2014'],
-    [41, 'Bringing It All Back Home', '22 Mar 1965', 7],
-    [42, 'Innervisions', '3 Aug 1973', 12],
-    [43, 'Hank Williams Sings', '9 Nov 1951', 6],
-    [44, 'Madman Across the Water', '5 Nov 1971', 2],
-    [45, 'Axis: Bold as Love', '1 Dec 1967', 2],
-    [46 , 'Under the Covers: Essential Red Hot Chili Peppers', '31 Mar 1998', 14]
+    [41, 'Bringing It All Back Home', 7, '22 Mar 1965'],
+    [42, 'Innervisions', 12, '3 Aug 1973'],
+    [43, 'Hank Williams Sings', 6, '9 Nov 1951'],
+    [44, 'Madman Across the Water', 2, '5 Nov 1971'],
+    [45, 'Axis: Bold as Love', 2, '1 Dec 1967'],
+    [46 , 'Under the Covers: Essential Red Hot Chili Peppers', 14, '31 Mar 1998']
 ]
 
 songs = [

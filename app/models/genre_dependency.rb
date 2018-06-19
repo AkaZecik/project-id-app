@@ -21,9 +21,6 @@ class GenreDependency < ApplicationRecord
         throw :abort
       end
 
-      puts "self.genre_id: #{self.genre_id}, self.super_genre_id: #{self.super_genre_id}"
-      puts "super_genre_id: #{super_genre_id}"
-
       super_genre_id = GenreDependency.find_by(genre_id: super_genre_id)&.super_genre_id
     end
   end
