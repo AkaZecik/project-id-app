@@ -14,20 +14,6 @@ class Person < ApplicationRecord
     end
   end
 
-  # def functions
-  #   sql_code = <<~HEREDOC
-  #     SELECT DISTINCT f.*
-  #     FROM members m
-  #       JOIN member_functions mf ON m.person_id = #{person_id}
-  #         AND m.member_id = mf.member_id
-  #       JOIN functions f ON mf.function = f.name;
-  #   HEREDOC
-  #
-  #   # puts sql_code
-  #   Function.find_by_sql(sql_code)
-  #   Function.all
-  # end
-
   private
 
   def born_before_death
